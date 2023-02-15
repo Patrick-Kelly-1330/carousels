@@ -1,0 +1,337 @@
+/* ================================================================
+     First and Last Carousel
+   ================================================================
+*/
+
+h1 {
+  color: rgb(71, 42, 165);
+}
+
+img {
+  object-fit: cover;
+  border: 3px solid #f7f7f7;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ========================================
+     Gloabal Elements
+   ========================================
+*/
+
+.RawCarouselComponent {
+  height: 40em;
+  background-color: #77a2dc;
+  padding: 10em 0 0 0;
+}
+
+h1, h3, .cardTitle {
+  color: #f7f7f7;
+  text-align: center;
+}
+
+.hiddenNumber {
+  color: #77a2dc;
+}
+
+
+/* ========================================
+     Raw CSS Carousel
+   ========================================
+*/
+
+.RawCarouselContainer {
+  display: flex;
+  height: 22em;
+  border: .15em solid #f7f7f7;
+  margin: 0em 4.5em;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.CardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  height: 20em;
+  width: 800px;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1em;
+  overflow-x: hidden;
+  box-shadow: 8px 0px 35px #202021 inset;
+  z-index: 5;
+  border-radius: 1em;
+}
+
+.CardContainerRightShadow {
+  box-shadow: -8px 0px 35px #202021 inset;
+  border-radius: 1em;
+}
+
+.containerShadow {
+  /* box-shadow: 0px 0px 25px #000000; */
+  border-radius: 1em;
+}
+
+.previous, .next {
+  height: 6em;
+  width: 6em;
+  border-radius: .5em;
+  margin: 2em;
+  cursor: pointer;
+}
+
+.fa-circle-left, .fa-circle-right {
+  margin: 1em;
+  color: azure;
+}
+
+
+.fa-circle-left:hover, .fa-circle-right:hover {
+  margin: 1em;
+  color: #cdd1d1;
+  cursor: pointer;
+}
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: .2em solid #f7f7f7;
+  height: 15em;
+  width: 40em;
+  background-color: #949293;
+  box-shadow: -4px 1px 10px #595858;
+  border-radius: .5em;
+  padding: 1em;
+}
+
+.cardTitle {
+  font-size: 3em;
+}
+
+/* ============================================
+   -- Pallet ----------------------------------
+
+   page background:  #77a2dc (deep light blue)
+   border and text: #f7f7f7 (light off white)
+   component background: #929394 (light grey)
+   section shadow: #202021 (dark grey)
+
+   =============================================
+*/
+
+
+/* ================================================================
+     Leveraging Transform
+   ================================================================
+*/
+
+.TransformComponent {
+  margin: 5em 0em;
+  background-color: #f7f7f7;
+  color: #595858;
+}
+
+.TransformComponent h1 {
+  color: #202021;
+}
+
+.TransformCardContainer {
+  display: flex;
+  overflow: hidden;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  border: .5em solid #202021;
+  background-color: #202021;
+  border-radius: .5em;
+}
+
+.TransformCard {
+  min-width: 500px;
+  min-height: 500px;
+  background-color: #77a2dc;
+  border: solid .3px #202021;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: .5em;
+}
+
+.TransformCard h3 {
+  color: #202021;
+  font-size: 15em;
+  text-align: center;
+}
+
+.TransformCard h4 {
+  color: #202021;
+  font-size: 20px;
+  text-align: center;
+}
+
+.buttonsCarousel {
+  display: flex;
+  margin: 3em 34em;
+  padding: 1em 2em;
+  column-gap: 2em;
+  justify-content: center;
+  border: #202021;
+  background-color: #202021;
+  border-radius: .5em;
+}
+
+.selection {
+  display: flex;
+  height: 1.5em;
+  width: 1.5em;
+  border: .1em solid #202021;
+  background-color: #595858;
+  padding: .2em;
+  color: #f7f7f7;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.selection:hover {
+  display: flex;
+  height: 1.5em;
+  width: 1.5em;
+  border: .1em solid #202021;
+  background-color: #dedbdb;
+  color: #202021;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#a {
+  background-color: #c6e59e;
+}
+
+#b {
+  background-color: #9ee5bf;
+}
+
+#c {
+  background-color: #9edae5;
+}
+
+#d {
+  background-color: #9ebde5;
+}
+
+#e {
+  background-color: #aa9ee5;
+}
+
+#f {
+  background-color: #e59ed2;
+}
+
+
+/* ================================================================
+    3D Carousel
+   ================================================================
+*/
+
+div#gallery {
+	perspective: 1400px;
+  margin: 10px 10px 300px;
+}
+
+figure {
+	min-height: 80px;
+  transform-style: preserve-3d;
+	-webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50% -500px;
+	transition: 1s;
+}
+
+/* carousel cards */
+figure#spinner img {
+	width: 300px;
+  height: 300px;
+	position: absolute;
+	left: 40%;
+	transform-origin: 50% 50% -450px;
+	outline: 1px solid transparent;
+}
+
+figure#spinner img:nth-child(1) {
+  transform: rotateY(0deg) translateZ(20px);
+}
+
+figure#spinner img:nth-child(2) {
+	transform: rotateY(-45deg) translateZ(20px);
+}
+figure#spinner img:nth-child(3) {
+	transform: rotateY(-90deg)  translateZ(20px);
+}
+figure#spinner img:nth-child(4) {
+	transform: rotateY(-135deg)  translateZ(20px);
+}
+figure#spinner img:nth-child(5) {
+	transform: rotateY(-180deg) translateZ(20px);
+}
+figure#spinner img:nth-child(6) {
+	transform: rotateY(-225deg) translateZ(20px);
+}
+figure#spinner img:nth-child(7) {
+	transform: rotateY(-270deg) translateZ(20px);
+}
+figure#spinner img:nth-child(8) {
+	transform: rotateY(-315deg) translateZ(20px);
+}
+
+.gallery {
+  margin: 2em;
+  display: flex;
+}
+
+#headerOne {
+  color:#f7f7f7;
+  padding: 2em 1em;
+}
+
+.carouselActions {
+  display: flex;
+  column-gap: 14em;
+  padding: 0em 35em;
+}
+
+.carButton {
+  display: flex;
+  height: 3em;
+  width: 4em;
+  justify-content: center;
+  align-items: center;
+  color: #f7f7f7;
+  background-color: #403e3e;
+  border-radius: .2em;
+  font-size: 20px;
+  box-shadow: 2px 2px 2px #0d132e;
+  cursor: pointer;
+}
+
+.carButton:hover {
+  background-color: #9b9898;
+}
+
+.CaroContainer {
+  padding: 3em 0 7em;
+  background-color: #061245;
+}
+
+
+
